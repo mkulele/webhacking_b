@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
-const PORT= process.env.PORT || 3000;
+const PORT= process.env.PORT || 3100;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 const indexRoute = require("./routes/index");
 
 // DB연결
-let url =  "mongodb://localhost:27017/dalhav";
+//let url =  "mongodb://localhost:27017/dalhav";
+let url = 'mongodb://admin:admin123@ds145039.mlab.com:45039/heroku_r4rpz5hv';
 mongoose.connect(url, {useNewUrlParser: true});
 
 // 뷰엔진 설정
